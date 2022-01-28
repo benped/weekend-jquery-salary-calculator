@@ -4,8 +4,21 @@ let salaryDollar = 0;
 function readyNow(){
     
     console.log('JS UP');
-    $('#submitButton').on('click',salaryTotal, intakeInfo);
+    $('#submitButton').click(submitFunctions);
     // $('#submitButton').on('click',salaryTotal);
+}
+
+// submit Functions work to check information before it is passed to 
+// total salary table and added to the table
+//Empty checker turned off to make debugging easier
+function submitFunctions(){
+    // if(emptyChecker()==true){
+    //     alert("Please fill out all boxes!");
+    //     return false;
+    // } else {
+    salaryTotal();
+    intakeInfo();
+// }
 }
 
 function intakeInfo(){
@@ -42,4 +55,15 @@ function intakeInfo(){
 function salaryTotal(){
     salaryDollar += Number($('#salary').val());
     $('#runningTotal').text(salaryDollar);
+}
+
+function emptyChecker(){
+    if ($('#firstName').val()===''||
+    $('#lastName').val()===''||
+    $('#ID').val()===''||
+    $('#title').val()===''||
+    $('#salary').val()===''){
+        // alert("Hello! I am an alert box!!");
+        return true;
+    }
 }
