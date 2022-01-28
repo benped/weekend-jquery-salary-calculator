@@ -6,6 +6,7 @@ function readyNow(){
     console.log('JS UP');
     $('#submitButton').click(submitFunctions);
     // $('#submitButton').on('click',salaryTotal);
+    $('#salaryTable').on('click', '.delete', deleteRow);
 }
 
 // submit Functions work to check information before it is passed to 
@@ -44,7 +45,8 @@ function intakeInfo(){
     <td>${employee.lastName}</td>
     <td>${employee.ID}</td>
     <td>${employee.title}</td>
-    <td>${employee.salary}</td></tr>`)
+    <td id="salaryDatum">${employee.salary}</td>
+    <td><button class="delete">Delete</button></td></tr>`)
         // End table data appended to DOM
 
 
@@ -55,8 +57,13 @@ function intakeInfo(){
 function salaryTotal(){
     salaryDollar += Number($('#salary').val());
     $('#runningTotal').text(salaryDollar);
+        // Makes background red if over 20K 
+    if (salaryDollar > 20000){
+        $('#salaryTotalDiv').addClass('redBackground')
+    }
 }
 
+// Checks if any field is empty and throws a false if they are
 function emptyChecker(){
     if ($('#firstName').val()===''||
     $('#lastName').val()===''||
@@ -66,4 +73,17 @@ function emptyChecker(){
         // alert("Hello! I am an alert box!!");
         return true;
     }
+}
+
+function deleteRow(){
+    console.log('this is', $(this));
+    // remove the block
+    
+    console.log(salaryDollar);
+    // console.log($(this,'#salaryDatum').text());
+    // $(this).parents("tr").remove();
+    salaryDollar -= Number($(this).parents("tr").children("#salaryDatum").text());
+    console.log(salaryDollar);
+    $('#runningTotal').text(salaryDollar);
+    $(this).parents("tr").remove();
 }
