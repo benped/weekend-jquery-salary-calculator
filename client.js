@@ -7,6 +7,13 @@ function readyNow(){
 }
 
 function intakeInfo(){
-    let firstName = $('#firstName').val();
-    console.log(firstName);
+    let employee = {
+        firstName: $('#firstName').val(),
+        lastName: $('#lastName').val(),
+        ID: $('#ID').val(),
+        title: $('#title').val(),
+        salary: $('#salary').val(),
+    }
+ 
+    console.log(employee);
 }
