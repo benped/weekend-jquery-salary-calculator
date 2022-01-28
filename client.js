@@ -1,13 +1,15 @@
 $(readyNow);
+let salaryDollar = 0;
 
 function readyNow(){
+    
     console.log('JS UP');
-    $('#submitButton').on('click',intakeInfo);
-
+    $('#submitButton').on('click',salaryTotal, intakeInfo);
+    // $('#submitButton').on('click',salaryTotal);
 }
 
 function intakeInfo(){
-    
+
     // PUT ALL INPUTS INTO AN employee OBJECT
     let employee = {
         firstName: $('#firstName').val(),
@@ -34,4 +36,10 @@ function intakeInfo(){
 
 
     console.log(employee);
+}
+
+// Calculates and pushes total salary to DOM - working
+function salaryTotal(){
+    salaryDollar += Number($('#salary').val());
+    $('#runningTotal').text(salaryDollar);
 }
