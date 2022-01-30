@@ -49,7 +49,7 @@ function intakeInfo(){
     <td>${employee.lastName}</td>
     <td>${employee.ID}</td>
     <td>${employee.title}</td>
-    <td id="salaryDatum">${employee.salary}</td>
+    <td id="salaryDatum">${accounting.formatMoney(employee.salary)}</td>
     <td><button class="delete">Delete</button></td></tr>`)
         // End table data appended to DOM
 
@@ -59,8 +59,8 @@ function intakeInfo(){
 
 // Calculates and pushes total salary to DOM - working
 function salaryTotal(){
-    salaryDollar += (Number($('#salary').val()))/12;
-    $('#runningTotal').text(Math.round(salaryDollar));
+    salaryDollar += (accounting.unformat($('#salary').val()))/12;
+    $('#runningTotal').text(accounting.formatMoney(salaryDollar));
         // Makes background red if over 20K 
     if (salaryDollar > 20000){
         $('#salaryTotalDiv').addClass('redBackground')
@@ -88,9 +88,9 @@ function deleteRow(){
     console.log(salaryDollar);
     // console.log($(this,'#salaryDatum').text());
     // $(this).parents("tr").remove();
-    salaryDollar -= (Number($(this).parents("tr").children("#salaryDatum").text()))/12;
+    salaryDollar -= (Number(accounting.unformat($(this).parents("tr").children("#salaryDatum").text())))/12;
     console.log(salaryDollar);
-    $('#runningTotal').text(Math.round(salaryDollar));
+    $('#runningTotal').text(accounting.formatMoney(salaryDollar));
     $(this).parents("tr").remove();
     if (salaryDollar <= 20000){
         $('#salaryTotalDiv').removeClass('redBackground')

@@ -45,7 +45,7 @@ input {
 }
 
 .column-two {
-    width: 20%
+    width: 55px;
 }
 .column-three {
     width: 10%
@@ -68,7 +68,9 @@ th {
 table {
     width: 100%;
     border: 1px solid black;
+    border-collapse:collapse;
 }
+
 
 #salaryTotalDiv {
     display: flex;
