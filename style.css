@@ -18,7 +18,8 @@ main {
 }
 
 .redBackground{
-    background-color: red;
+        color: white;
+        background-color: red;
 }
 
 #spacer{
@@ -26,7 +27,7 @@ main {
 }
 
 .titleHeader {
-    background-color: gray;
+    background-image: linear-gradient(to bottom right, rgb(45, 45, 171), rgb(19, 94, 22));
     text-align: center;
     padding: 25px;
     color: white;
@@ -63,6 +64,12 @@ input {
 th {
     text-align: left;
     border: 1px solid black;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
 }
 
 table {
@@ -77,6 +84,8 @@ table {
 
 td {
     text-align: left;
+    padding-left: 12px;
+    padding-right: 12px; 
     border: 1px solid black; 
 }
 
@@ -84,17 +93,20 @@ td {
     background-color: #f2f2f2;
 }
 
+
 #salaryTable tr:hover {
-    background-color: #ddd;
+    background-color: rgb(193, 240, 190);
+}
+
+.delete:hover {
+    background-color: red; 
 }
 
 #table-footer {
     height: 20px;
-    background-color: rgb(233, 233, 233);
     width: 100%;
     border: 1px solid black;
 }
-
 
 #salaryTotalDiv {
     display: flex;
