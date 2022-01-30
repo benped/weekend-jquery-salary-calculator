@@ -1,10 +1,76 @@
+html {
+    font-family: Helvetica, sans-serif
+}
+
+h2 {
+    font-weight: lighter;
+}
 main {
     display: inline-block;
 }
-button{
-    
+#submitButton{
+    display: block;
+    float: right;
+    margin: 25px;
+    height: 2em;
+    width: 6em;
+
+
 }
 
 .redBackground{
     background-color: red;
+}
+
+#spacer{
+    height: 50px;
+}
+header {
+    background-color: gray;
+    text-align: center;
+    padding: 25px;
+    color: white;
+}
+
+input {
+    border: 1px black solid;
+    height: 2em;
+    font-size: 1em;
+    padding-left: 10px;
+    max-width: 150px;
+}
+
+.column-one {
+    width: 20%
+}
+
+.column-two {
+    width: 20%
+}
+.column-three {
+    width: 10%
+}
+.column-four {
+    width: 20%
+}
+.column-five {
+    width: 20%
+}
+.column-six {
+    width: 10%
+}
+
+th {
+    text-align: left;
+    border: 1px solid black;
+}
+
+table {
+    width: 100%;
+    border: 1px solid black;
+}
+
+#salaryTotalDiv {
+    display: flex;
+    flex-direction: row-reverse;
 }

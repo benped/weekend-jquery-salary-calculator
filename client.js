@@ -13,10 +13,14 @@ function readyNow(){
 // total salary table and added to the table
 //Empty checker turned off to make debugging easier
 function submitFunctions(){
-    // if(emptyChecker()==true){
-    //     alert("Please fill out all boxes!");
-    //     return false;
-    // } else {
+    if(emptyChecker()==true){
+        alert("Please fill out all boxes!");
+        return false;
+    }
+    if(numberChecker()==false){
+        alert("Salary needs to be a number!")
+        return false;
+    };
     salaryTotal();
     intakeInfo();
 // }
@@ -55,12 +59,13 @@ function intakeInfo(){
 
 // Calculates and pushes total salary to DOM - working
 function salaryTotal(){
-    salaryDollar += Number($('#salary').val());
-    $('#runningTotal').text(salaryDollar);
+    salaryDollar += (Number($('#salary').val()))/12;
+    $('#runningTotal').text(Math.round(salaryDollar));
         // Makes background red if over 20K 
     if (salaryDollar > 20000){
         $('#salaryTotalDiv').addClass('redBackground')
     }
+
 }
 
 // Checks if any field is empty and throws a false if they are
@@ -75,6 +80,7 @@ function emptyChecker(){
     }
 }
 
+// DELETES ROW AND MOVES TOTAL DOWN
 function deleteRow(){
     console.log('this is', $(this));
     // remove the block
@@ -82,8 +88,18 @@ function deleteRow(){
     console.log(salaryDollar);
     // console.log($(this,'#salaryDatum').text());
     // $(this).parents("tr").remove();
-    salaryDollar -= Number($(this).parents("tr").children("#salaryDatum").text());
+    salaryDollar -= (Number($(this).parents("tr").children("#salaryDatum").text()))/12;
     console.log(salaryDollar);
-    $('#runningTotal').text(salaryDollar);
+    $('#runningTotal').text(Math.round(salaryDollar));
     $(this).parents("tr").remove();
+    if (salaryDollar <= 20000){
+        $('#salaryTotalDiv').removeClass('redBackground')
+    }
 }
+
+function numberChecker(){
+    if (isNaN($('#salary').val())){
+        console.log('NOT A NUMBER?',$('#salary').val())
+        return false;
+    }
+};
