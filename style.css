@@ -8,14 +8,13 @@ h2 {
 main {
     display: inline-block;
 }
+
 #submitButton{
     display: block;
     float: right;
     margin: 25px;
     height: 2em;
     width: 6em;
-
-
 }
 
 .redBackground{
@@ -25,7 +24,8 @@ main {
 #spacer{
     height: 50px;
 }
-header {
+
+.titleHeader {
     background-color: gray;
     text-align: center;
     padding: 25px;
@@ -41,23 +41,23 @@ input {
 }
 
 .column-one {
-    width: 20%
+    width: 20%;
 }
 
 .column-two {
-    width: 55px;
+    width: 20%;
 }
 .column-three {
-    width: 10%
+    width: 10%;
 }
 .column-four {
-    width: 20%
+    width: 20%;
 }
 .column-five {
-    width: 20%
+    width: 20%;
 }
 .column-six {
-    width: 10%
+    width: 10%;
 }
 
 th {
@@ -69,6 +69,30 @@ table {
     width: 100%;
     border: 1px solid black;
     border-collapse:collapse;
+}
+
+#salaryDatum {
+    text-align: right; 
+}
+
+td {
+    text-align: left;
+    border: 1px solid black; 
+}
+
+#salaryTable tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+#salaryTable tr:hover {
+    background-color: #ddd;
+}
+
+#table-footer {
+    height: 20px;
+    background-color: rgb(233, 233, 233);
+    width: 100%;
+    border: 1px solid black;
 }
 
 

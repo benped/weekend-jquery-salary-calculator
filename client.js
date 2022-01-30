@@ -4,8 +4,10 @@ let salaryDollar = 0;
 function readyNow(){
     
     console.log('JS UP');
+    // Listening for new data submitted 
     $('#submitButton').click(submitFunctions);
-    // $('#submitButton').on('click',salaryTotal);
+    
+    // Listening for Delete
     $('#salaryTable').on('click', '.delete', deleteRow);
 }
 
